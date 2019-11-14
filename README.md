@@ -20,16 +20,12 @@ With myNEIGHBOUR, the user can propose his unused items that his neighbors and v
 
 
 ## Backlog
-
 App:
 - responsive
-
 Geo Location:
 - see myNeighbour location in a map (only by area)
-
 Seach bar:
 - to seach an item by name, categories and geografic area.
-
 Chat:
 - to contact my neighbour when I'm interesting by an item.
   
@@ -37,13 +33,18 @@ Chat:
 
 ## Routes
 
-- / - Homepage
+- /auth/login - Login from
 - /auth/signup - Signup form
-- /auth/login - Login form
-- /restaurants - restaurant list
-- /restaurants/create - create a restaurant
-- /restaurants/:id - restaurant detail
-- /profile/me - my details and favorite restaurants
+- /auth/signup/next - Signup next form
+- /auth/logout
+- /auth/me - Administrator identicfication
+- /private/items - items list
+- /private/items/_id - item detail
+- /private/profile/-id - Profile of a neighbour
+- /private/me/profile/edit - Personal profil edit form
+- /private/me/profile/delete - Delete personal profil
+- /private/me/profile/item/edit - New item edit form
+- /private/me/profile/item/delete - Delete personal item
 - 404
 
 ## Pages
