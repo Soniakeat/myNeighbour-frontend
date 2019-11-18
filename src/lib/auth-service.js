@@ -1,5 +1,4 @@
 import axios from "axios";
-
 class Auth {
     constructor() {
         this.auth = axios.create({
@@ -9,11 +8,11 @@ class Auth {
     }
 
     signup(user) {
-        console.log(user)
-        const { email, password } = user;
+        const { email, password, firstName, lastName, phoneNumber, postalCode } = user;
         return this.auth
-            .post("/auth/signup", { email, password })
-            .then(({ data }) => data);
+            .post("/auth/signup", { email, password, firstName, lastName, phoneNumber, postalCode })
+            .then(({ data }) => data)
+
     }
 
     signupnext(user) {

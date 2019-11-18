@@ -14,11 +14,12 @@ const withAuth = (WrappedComponent) => {
             return (
                 <Consumer>
                     {
-                        ({ login, signup, user, logout, isLoggedin }) => {
+                        ({ login, signup, signupNext, user, logout, isLoggedin }) => {
                             return (
                                 <WrappedComponent
                                     login={login}
                                     signup={signup}
+                                    signupNext={signupNext}
                                     user={user}
                                     logout={logout}
                                     isLoggedin={isLoggedin}
@@ -47,11 +48,11 @@ class AuthProvider extends React.Component {
     }
 
     signup = user => {
-        const { email, password } = user;
-        auth
-            .signup({ email, password })
+        const { email, password, firstName, lastName, phoneNumber, postalCode } = user;
+        return auth
+            .signup({ email, password, firstName, lastName, phoneNumber, postalCode })
             .then(user => {
-                this.props.history.push('/signup/next')
+                /* this.props.history.push('/signup/next') */
                 this.setState({ isLoggedin: true, user })
             })
             .catch((error) =>
@@ -64,8 +65,12 @@ class AuthProvider extends React.Component {
 
         auth
             .login({ email, password })
-            .then(user => this.setState({ isLoggedin: true, user }))
-            .catch(err => console.log(err));
+            .then(user => {
+                this.props.history.push('/items')
+                this.setState({ isLoggedin: true, user })
+            })
+            .catch(error => console.log(error)
+            );
     };
 
     logout = () => {
@@ -78,12 +83,12 @@ class AuthProvider extends React.Component {
     render() {
 
         const { isLoading, isLoggedin, user } = this.state;
-        const { login, logout, signup } = this;
+        const { login, logout, signup, signupNext } = this;
 
         return isLoading ? (
             <div>Loading</div>
         ) : (
-                <Provider value={{ isLoggedin, user, login, logout, signup }}>
+                <Provider value={{ isLoggedin, user, login, logout, signup, signupNext }}>
                     {this.props.children}
                 </Provider>
             );

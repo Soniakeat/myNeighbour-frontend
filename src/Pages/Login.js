@@ -1,40 +1,60 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import {withAuth} from '../lib/AuthProvider';
+import { withAuth } from '../lib/AuthProvider';
+
+
+import '../App.css';
+
+
+
 
 
 class Login extends Component {
-    state = { username: "", password: ""};
+    state = { email: "", password: "" };
 
-handleFormSubmit = event => {
-    event.preventDefault();
-    const { email, password } = this.state;
-    this.props.login({ email, password});
-};
+    handleFormSubmit = event => {
+        event.preventDefault();
+        const { email, password } = this.state;
+        this.props.login({ email, password });
+    };
 
-handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-};
+    handleChange = event => {
+        const { name, value } = event.target;
+        this.setState({ [name]: value });
+    };
 
     render() {
         const { email, password } = this.state;
 
         return (
-            <div>
-            <form onSubmit={this.handleFormSubmit}>
-                <label>Email:</label>
-                <input type="text" name="email" value={email} onChange={this.handleChange}/>
+            <>
+                <h1>Login</h1>
+                <div className="form-container" >
+                    <form onSubmit={this.handleFormSubmit}>
+                    <div className="label-form">
+                        <label className="text-label" >Email:</label>
+                    </div>
+                    <div >
+                        <input className="input-form" type="text" name="email" placeholder="email" value={email} onChange={this.handleChange} />
+                    </div>
+                    <div className="label-form" >
+                        <label className="text-label">Password:</label>
+                    </div>
+                    <div >
+                        <input className="input-form" type="text" name="password" placeholder="*****" value={password} onChange={this.handleChange} />
+                    </div>
+                    <div className="btn-form">                       
+                        <button ><input type="submit" value="Login" /></button>
+                    </div>
+                    </form>
 
-                <label>Password:</label>
-                <input type="text" name="password" value={password} onChange={this.handleChange}/>
+                </div>
+                <div className="link-form">
+                    <p>No registered?</p>
+                    <span><Link to={"signup"}>Signup</Link> </span>
+                </div>
 
-                <input type="submit" value="Login"/>
-            </form>
-
-            <p>No registered?</p>
-                <Link to={"signup"}>Signup</Link>
-            </div>
+            </>
         )
     }
 }

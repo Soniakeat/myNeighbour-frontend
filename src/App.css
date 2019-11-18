@@ -1,22 +1,47 @@
-.App {
-  text-align: center;
+
+
+/*RESET*/
+* {
+  margin: 0px;
+  padding: 0px;
+  font-style: "Typographie";
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*FORMS*/
+.form-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 60vh;
+  padding-top: 40%;
 }
 
-.App-link {
-  color: #09d3ac;
+#signupNext-container{
+  padding-top: 17%;
+  min-height: 60vh;
+}
+
+.label-form{
+  padding: 2vh;
+  text-align: center;
+}
+
+.input-form{
+  padding: 2vh;
+  text-align: center;
+  box-shadow: inset 0px 0px 0px grey;
+}
+
+.btn-form{
+  padding: 2vh;
+  text-align: center;
+}
+
+.text-label{
+ 
+}
+
+.link-form{
+  display: flex;
+  justify-content: center;
 }
