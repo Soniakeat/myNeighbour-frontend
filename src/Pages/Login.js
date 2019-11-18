@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { withAuth } from '../lib/AuthProvider';
 
-
 import '../App.css';
-
-
-
-
 
 class Login extends Component {
     state = { email: "", password: "" };
@@ -27,10 +22,14 @@ class Login extends Component {
         const { email, password } = this.state;
 
         return (
-            <>
-                <h1>Login</h1>
-                <div className="form-container" >
-                    <form onSubmit={this.handleFormSubmit}>
+            
+            <>                
+            <div>                
+                    <form className="form-container" onSubmit={this.handleFormSubmit}>
+                    <div>
+                    <img className="logo" src="/images/Logo.png" alt=""/>
+                    </div>
+                    <span id="connect-Neighbour">Connect to your NEIGHBOURS!</span>
                     <div className="label-form">
                         <label className="text-label" >Email:</label>
                     </div>
@@ -44,16 +43,15 @@ class Login extends Component {
                         <input className="input-form" type="text" name="password" placeholder="*****" value={password} onChange={this.handleChange} />
                     </div>
                     <div className="btn-form">                       
-                        <button ><input type="submit" value="Login" /></button>
+                        <button ><input type="submit" value="LOGIN" /></button>
                     </div>
                     </form>
-
                 </div>
+
                 <div className="link-form">
                     <p>No registered?</p>
                     <span><Link to={"signup"}>Signup</Link> </span>
                 </div>
-
             </>
         )
     }

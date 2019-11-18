@@ -7,18 +7,26 @@ class Navbar extends Component {
 
     const { user, logout, isLoggedin } = this.props;
     return (
-      <div style={{ borderRadius: '5px', padding: '20px', background: '#686de0' }}>
+      <div style={{ padding: '30px', 
+        background: 'rgb(75, 210, 214)' }}>
         {
           isLoggedin ?
             (<div>
-              {/* <p>username: {user.username}</p> */}
+              <div>
+              <Link to="/items"> <button>Home</button> </Link>             
+              <Link to="/profile"> <button>Profile</button> </Link>
+              </div>            
+              <div>
               <button onClick={logout}>Logout</button>
+
+              </div>
+
             </div>)
             :
             (<div>
-              <Link to="/login"> <button>Login</button> </Link>
+              {/* <Link to="/login"> <button>Login</button> </Link>
               <br />
-              <Link to="/signup"> <button>Signup</button> </Link>
+              <Link to="/signup"> <button>Signup</button> </Link> */}
 
             </div>)
         }

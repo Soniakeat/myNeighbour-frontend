@@ -7,22 +7,32 @@
   font-style: "Typographie";
 }
 
+/*NAVBAR*/
+.nav-container{
+  display: flex;
+}
+
 /*FORMS*/
 .form-container{
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 60vh;
-  padding-top: 40%;
+  padding-top: 3%;
+  padding-bottom: 4%;
 }
 
 #signupNext-container{
-  padding-top: 17%;
   min-height: 60vh;
+  padding-top: 0;
+}
+
+#logo-signupNext{
+  max-width: 50%;
 }
 
 .label-form{
-  padding: 2vh;
+  padding: 1vh;
   text-align: center;
 }
 
@@ -37,11 +47,39 @@
   text-align: center;
 }
 
-.text-label{
- 
-}
-
 .link-form{
   display: flex;
   justify-content: center;
+  font-weight: 200;
+}
+
+.text-label{
+  font-weight: 200;
+}
+
+/*LOGO & TAGLINE*/
+.logo{
+  max-width: 70%;
+  display: flex;
+  margin: 0 auto;
+}
+
+#connect-Neighbour{
+  padding-bottom: 7%;
+  font-weight: 200;
+  
+}
+
+
+
+/*FOOTER*/
+.footer{
+  padding: 7px; 
+  background: rgb(75, 210, 214); 
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 }

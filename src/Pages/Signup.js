@@ -12,7 +12,6 @@ class Signup extends Component {
         lastName: "",
         phoneNumber: "",
         postalCode: ""
-
     }
 
     handleFormSubmit = event => {
@@ -20,6 +19,7 @@ class Signup extends Component {
         const { email, password, firstName, lastName, phoneNumber, postalCode } = this.state;
         this.props.signup({ email, password, firstName, lastName, phoneNumber, postalCode });
     };
+
     handleFirstForm = event => {
         event.preventDefault();
         const { email, password } = this.state
@@ -39,8 +39,10 @@ class Signup extends Component {
             <  >
                 {signUpNext ?
                     <div>
-                        <h1> SignupNext</h1>
                         <div className="form-container" id="signupNext-container">
+                        <div>
+                    <img className="logo" id="logo-signupNext" src="/images/Logo.png" alt=""/>
+                    </div>
                             <form onSubmit={this.handleFormSubmit}>
                                 <div className="label-form">
                                     <label className="text-label">First Name</label>
@@ -67,47 +69,44 @@ class Signup extends Component {
                                     <input className="input-form" type="text" placeholder="postal code" name="postalCode" value={postalCode} onChange={this.handleChange} />
                                 </div>
                                 <div className="btn-form">
-                                    <input type="submit" value="Signup" />
+                                    <input type="submit" value="DONE!" />
                                 </div>
                             </form>
-
                         </div>
                         <div className="link-form">
                             <p>Already have account?</p>
                             <Link to={"login"}>Login</Link>
                         </div>
                     </div> : <div>
-                        <h1>Signup</h1>
+                
                         <div className="form-container">
-                            <form onSubmit={this.handleFirstForm}>
-                                <div className="label-form">
-                                    <label className="text-label">Email:</label>
-                                </div>
-                                <div>
-                                    <input className="input-form" type="text" placeholder="email" name="email" value={email} onChange={this.handleChange} />
-                                </div>
-                                <div className="label-form">
-                                    <label className="text-label">Password:</label>
-                                </div>
-                                <div>
-                                    <input className="input-form" type="password" name="password" placeholder="*****" value={password} onChange={this.handleChange} />
-                                </div>
-                                <div className="btn-form">
-                                    <input type="submit" value="Continue" />
-                                </div>
-                            </form>
+                        <div>
+                        <img className="logo" src="/images/Logo.png" alt=""/>
+                        </div>
+                        <form onSubmit={this.handleFirstForm}>
+                            <div className="label-form">
+                                <label className="text-label">Email:</label>
+                            </div>
+                            <div>
+                                <input className="input-form" type="text" placeholder="email" name="email" value={email} onChange={this.handleChange} />
+                            </div>
+                            <div className="label-form">
+                                <label className="text-label">Password:</label>
+                            </div>
+                            <div>
+                                <input className="input-form" type="password" name="password" placeholder="*****" value={password} onChange={this.handleChange} />
+                            </div>
+                            <div className="btn-form">
+                                <input type="submit" value="SIGNUP" />
+                            </div>
+                        </form>
 
                         </div>
                         <div className="link-form">
                             <p>Already have account?</p>
                             <span><Link to={"login"}>Login</Link></span>
-                        </div></div>}
-
-
-
-
-
-
+                        </div>
+                    </div>}
             </ >
         )
     }

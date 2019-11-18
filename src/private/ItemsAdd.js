@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withAuth } from '../lib/AuthProvider';
 import { Redirect } from "react-router-dom";
-import itemsApi from '../services/items'
+import itemsApi from '../services/items-service'
 
 class ItemsAdd extends Component {
     constructor() {
@@ -14,7 +14,6 @@ class ItemsAdd extends Component {
 
         };
     }
-
 
     handleFormSubmit = event => {
         event.preventDefault();
@@ -39,7 +38,8 @@ class ItemsAdd extends Component {
         return (
             <div>
                 <h1>Add Item</h1>
-                <form onSubmit={this.handleFormSubmit} >
+                <div >
+                <form className="form-container" onSubmit={this.handleFormSubmit} >
                     <label htmlFor="title">Title</label>
                     <input onChange={this.handleChange} name="title" type="text" value={title} />
                     <label htmlFor="description">Description</label>
@@ -47,6 +47,7 @@ class ItemsAdd extends Component {
                     <button>Submit</button>
                 </form>
                 {redirect ? <Redirect to={this.state.path} props={this.props} /> : null}
+                </div>
             </div>
         )
     }
