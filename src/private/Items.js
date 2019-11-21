@@ -18,20 +18,31 @@ class Items extends Component {
 
   render() {
     const { listOfItems } = this.state;
-    return (
-      <article>
-        <h1>Items</h1>
-        <Link to="/items/add">Add Item</Link>
-        {listOfItems.map((item, index) => (
+    if (listOfItems) {
+      return (
+        <article>
+        <div className="titleContainer">
+          <h1 className="connect-Neighbour" >Items of my NEIGHBOURS</h1>
+        </div>
+          <div className="itemsContainer">
+          <Link to="/items/add"><button> Add Item</button></Link>
+          {listOfItems.map((item, index) => (
           <Link to={`/items/${item._id}`}>
-            <div>
-              <img key={index} src={item.image} alt="item"></img>
-              <p>{item.title}</p>
-            </div>
+              <div className="itemsCards">        
+                <img key={index} src={item.image} alt="item"></img>
+                <p >Title: {item.title}</p>              
+              </div>
           </Link>
-        ))}
-      </article>
-    );
+          ))}
+          </div>
+        </article>
+      );
+
+    } else {
+      return (
+        <div>Loading...</div>
+      )
+    }
   }
 }
 

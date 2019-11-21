@@ -10,14 +10,17 @@ import Items from "./private/Items";
 import ItemsAdd from "./private/ItemsAdd";
 import Item from "./private/Item";
 import Profile from "./private/Profile";
+import MyProfile from "./private/MyProfile";
+import ProfileEdit from "./private/ProfileEdit";
+import ItemsEdit from "./private/ItemsEdit";
+
 import Footer from "./components/Footer";
+import Landing from "./components/Landing";
 
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
 
 import "./App.css";
-/* import Typography from 'typography'
-import lincolnTheme from 'typography-theme-lincoln' */
 
 class App extends Component {
   render() {
@@ -26,11 +29,15 @@ class App extends Component {
         <div>
           <Navbar />
           <Switch>
+            <AnonRoute path="/" exact component={Landing} />
             <AnonRoute path="/signup" exact component={Signup} />
             <AnonRoute path="/login" exact component={Login} />
             <PrivateRoute path="/items" exact component={Items} />
             <PrivateRoute path="/items/add" exact component={ItemsAdd} />
+            <PrivateRoute path="/items/edit/:id" exact component={ItemsEdit} />
             <PrivateRoute path="/items/:id" exact component={Item} />
+            <PrivateRoute path="/profile" exact component={MyProfile} />
+            <PrivateRoute path="/profile/edit" exact component={ProfileEdit} />
             <PrivateRoute path="/profile/:id" exact component={Profile} />
           </Switch>
           <Footer />

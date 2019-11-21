@@ -40,10 +40,10 @@ class ItemsAdd extends Component {
                 <h1>Add Item</h1>
                 <div >
                 <form className="form-container" onSubmit={this.handleFormSubmit} >
-                    <label htmlFor="title">Title</label>
-                    <input onChange={this.handleChange} name="title" type="text" value={title} />
-                    <label htmlFor="description">Description</label>
-                    <input onChange={this.handleChange} name="description" type="text" value={description} />
+                    <label className="text-label" className="label-form" htmlFor="title">Title</label>
+                    <input className="input-form" onChange={this.handleChange} name="title" type="text" value={title} />
+                    <label className="text-label" className="label-form" htmlFor="description">  Description</label>
+                    <textarea onChange={this.handleChange} name="description" type="text" value={description} ></textarea>
                     <button>Submit</button>
                 </form>
                 {redirect ? <Redirect to={this.state.path} props={this.props} /> : null}
