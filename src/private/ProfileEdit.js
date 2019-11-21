@@ -73,7 +73,7 @@ class ProfileEdit extends Component {
         <div>
           <form className="form-container" onSubmit={this.handleFormSubmit}>
           <h2 id="connect-Neighbour">Edit Profile</h2>
-          <img width="60" src={this.state.avatarURL} />
+          <img width="60" src={this.state.avatarURL} className="nose"/>
           {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
           <label
             style={{
@@ -166,8 +166,10 @@ class ProfileEdit extends Component {
               type="text"
               value={postalCode}
             />
-            <button className="btn-form">Submit</button>
-          </form>
+            <center>
+            <button className="btn-edit btn-add btn-edit-prof">Submit</button>
+          </center> 
+         </form>
         </div>
       </>
     );

@@ -60,8 +60,8 @@ class ItemsAdd extends Component {
   render() {
     const { title, description, redirect } = this.state;
     return (
-      <div>
-        <div>
+      <>
+        <div className="form-add-item">
           <form className="form-container" onSubmit={this.handleFormSubmit}>
             <h1>Add Item</h1>
             <img width="60" src={this.state.avatarURL} />
@@ -113,14 +113,15 @@ class ItemsAdd extends Component {
               name="description"
               type="text"
               value={description}
+              
             ></textarea>
-            <button>Submit</button>
+            <button className="btn-edit btn-add">Submit</button>
           </form>
           {redirect ? (
             <Redirect to={this.state.path} props={this.props} />
           ) : null}
         </div>
-      </div>
+      </>
     );
   }
 }

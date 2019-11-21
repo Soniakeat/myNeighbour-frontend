@@ -26,7 +26,7 @@ class Items extends Component {
           </div>
           <div className="itemsContainer">
             <Link to="/items/add">
-              <button> Add Item</button>
+              <button className="btn-edit btn-add"> Add Item</button>
             </Link>
             {listOfItems.map((item, index) => (
               <div className="itemsCards">
@@ -37,7 +37,7 @@ class Items extends Component {
                     src={item.image}
                     alt="item"
                   ></img>
-                  <p>Title: {item.title}</p>
+                  <p><strong>Item:</strong> {item.title}</p>
                 </Link>
               </div>
             ))}

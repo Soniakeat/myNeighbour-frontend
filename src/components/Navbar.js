@@ -6,9 +6,9 @@ class Navbar extends Component {
   render() {
     const { user, logout, isLoggedin } = this.props;
     return (
-      <div>
+      <>
         {isLoggedin ? (
-          <div>
+          
             <div className="nav-container">
               <Link className="nav-links" to="/items">
                 {" "}
@@ -17,11 +17,10 @@ class Navbar extends Component {
               <Link className="nav-links" to="/profile">
                 myProfile
               </Link>
-              <button className="nav-logout" onClick={logout}>
-                Logout
-              </button>
+              <Link className="nav-links" onClick={logout}>Logout</Link>
+              
             </div>
-          </div>
+          
         ) : (
           <div>
             {/* <Link to="/login"> <button>Login</button> </Link>
@@ -29,7 +28,7 @@ class Navbar extends Component {
               <Link to="/signup"> <button>Signup</button> </Link> */}
           </div>
         )}
-      </div>
+      </>
     );
   }
 }

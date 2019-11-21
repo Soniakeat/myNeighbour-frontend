@@ -5,7 +5,7 @@ import { withAuth } from "../lib/AuthProvider";
 class Landing extends Component {
   render() {
     return (
-      <div>
+      <div className="landing">
       <div>
         <img id="logo-land" src="/images/Logo.png" alt=""/>
       </div>
@@ -14,10 +14,10 @@ class Landing extends Component {
       </div>
       <div id="link-land">
         <Link to={"signup"}>
-            <button className="btn-land">Signup</button>
+            <button  className="btn-land btn-edit">Signup</button>
         </Link>
         <Link to={"login"}>
-            <button className="btn-land">Login</button>
+            <button className="btn-land btn-edit">Login</button>
         </Link>
       </div>
       </div>

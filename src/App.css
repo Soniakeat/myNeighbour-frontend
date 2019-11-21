@@ -12,15 +12,17 @@ a {
 
 /*NAVBAR*/
 .nav-container {
-  padding: 20px;
   background: rgb(75, 210, 214);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
 }
 
 .nav-links {
   text-decoration: none;
   color: white;
+  padding: 20px 40px;
 }
 
 .nav-logout {
@@ -36,6 +38,16 @@ a {
   padding-top: 20%;
   padding-bottom: 4%;
 }
+.form-container > h1{
+ margin-bottom: 20px;
+}
+textarea{
+  padding: 2vh;
+  text-align: center;
+  box-shadow: inset 0px 0px 0px grey;
+  border-color: grey;
+  margin-bottom: 15px;
+} 
 
 #signupNext-container {
   min-height: 60vh;
@@ -126,7 +138,7 @@ a {
 }
 
 .titleContainer {
-  padding: 25px 25px 0px;
+  padding: 70px 25px 0px;
 }
 
 .btn-items {
@@ -145,6 +157,10 @@ a {
   padding: 1%;
   display: flex;
   border-style: ridge;
+}
+
+.btn-add{
+  font-size: 18px;
 }
 
 /*ITEM PAGE*/
@@ -181,8 +197,9 @@ a {
 .title-profile {
   font-weight: 200;
   font-size: 23px;
-  padding: 9px;
+  margin-bottom: 10px;
 }
+
 
 .items-owner {
   text-align: center;
@@ -193,10 +210,16 @@ a {
 }
 
 /*MY PROFILE PAGE*/
+.profil-section{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 .myProfile-container {
   padding: 1%;
   display: flex;
-  border-style: ridge;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgba(180, 180, 180, 0.4);
 }
 
 .imgProfile-container {
@@ -205,10 +228,32 @@ a {
 
 .infoProfile-container {
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
 }
 
 .btn-editProfile {
-  margin-top: 3px;
+  margin-top: 10px;
+}
+
+.btn-edit{
+  background-color: rgb(75, 210, 214);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 3%;
+}
+
+.btn-delete{
+  /* background-color: rgb(220, 228, 228);
+  color: dark;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 3%; */
 }
 
 .myProfile-items {
@@ -216,8 +261,31 @@ a {
   display: flex;
   flex-flow: column;
   align-items: center;
+  
 }
 
+.user-item-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 40px;
+  
+}
+.user-item-container>a{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.btn-profile-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
 /*FOOTER*/
 .footer {
   padding: 7px;
@@ -228,4 +296,36 @@ a {
   width: 100%;
   color: white;
   text-align: center;
+}
+
+/*Landing */
+
+.landing{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*ADD ITEM*/
+
+.form-add-item{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn{
+  background-color: #FF8776;
+}
+
+.btn-edit-prof{
+  margin-top: 15px;
+
+}
+
+.nose{
+  margin-bottom: 20px;
+  margin-top: 10px;
 }

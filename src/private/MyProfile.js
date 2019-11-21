@@ -39,25 +39,25 @@ class MyProfile extends Component {
     console.log(user);
     return (
       <>
-        <section>
+        <section className="profil-section">
           <article className="myProfile-container">
             <div className="imgProfile-container">
               <img width="60" src={user.image}></img>
             </div>
             <div className="infoProfile-container">
-              <h4>My profile</h4>
-              <h5>
-                Name:{user.firstName} {user.lastName}
-              </h5>
-              <h5>Postal code: {user.postalCode}</h5>
-              <h5>Phone Number: {user.phoneNumber}</h5>
+              <h4 className="title-profile">My profile</h4>
+              <p>
+                <strong>Name:</strong> {user.firstName} {user.lastName}
+              </p>
+              <p><strong>Postal code:</strong> {user.postalCode}</p>
+              <p><strong>Phone Number:</strong>  {user.phoneNumber}</p>
 
               <div className="btn-editProfile">
                 <Link to="/profile/edit">
-                  <button>Edit profile</button>
+                  <button className="btn-edit">Edit profile</button>
                 </Link>
                 <Link to="/profile/edit">
-                  <button className="btnProfile">Delete profile</button>
+                  <button className="delete-btn btn-edit ">Delete</button>
                 </Link>
               </div>
             </div>
@@ -65,15 +65,15 @@ class MyProfile extends Component {
 
           <article className="myProfile-items">
             <div>
-              <h4>My Items</h4>
+              <h4 className="title-profile">My Items</h4>
             </div>
             <div>
               {user.items.length > 0 ? (
                 <>
                   {user.items.map((item, index) => (
-                    <div>
+                    <div className="user-item-container">
                       <Link to={`/items/${item._id}`}>
-                        <h5>Title: {item.title}</h5>
+                        <p><strong>Title:</strong> {item.title}</p>
                         <img
                           width="200"
                           key={index}
@@ -81,15 +81,15 @@ class MyProfile extends Component {
                           alt="item"
                         ></img>
                       </Link>
-                      <div>
-                        <Link to={`/items/edit/${item._id}`}>
-                          <button>Edit Item</button>
+                      <div className="btn-profile-container">
+                        <Link  to={`/items/edit/${item._id}`}>
+                          <button className="btn-edit">Edit Item</button>
                         </Link>
                         <Link to="/items/add">
-                          <button>Add Item</button>
+                          <button className="btn-edit">Add Item</button>
                         </Link>
                       </div>
-                      <button onClick={() => this.handleDelete(item._id)}>
+                      <button className="delete-btn btn-edit" onClick={() => this.handleDelete(item._id)}>
                         Delete item
                       </button>
                     </div>
