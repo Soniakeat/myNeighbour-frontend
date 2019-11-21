@@ -5,6 +5,11 @@
   font-style: "Typographie";
 }
 
+a {
+  text-decoration: none;
+  color: #4bd2d6;
+}
+
 /*NAVBAR*/
 .nav-container {
   padding: 20px;
@@ -208,6 +213,9 @@
 
 .myProfile-items {
   padding: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 /*FOOTER*/

@@ -32,7 +32,12 @@ class Profile extends Component {
               profile.items.map((item, index) => (
                 <Link to={`/items/${item._id}`}>
                   <div className="cards-items-owner">
-                    <img key={index} src={item.image} alt="item"></img>
+                    <img
+                      width="200"
+                      key={index}
+                      src={item.image}
+                      alt="item"
+                    ></img>
                     <p>Title: {item.title}</p>
                     <p>Interested users:</p>
                     {item.contacts.map(contact => (

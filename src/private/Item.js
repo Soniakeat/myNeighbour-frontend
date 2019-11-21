@@ -31,35 +31,39 @@ class Item extends Component {
 
   render() {
     const { item } = this.state;
-    console.log(item)
+    console.log(item);
     if (item) {
       return (
         <section>
-        <div>
-          <div className="item-container">
-            <h1 className="connect-Neighbour">Item</h1>
-          </div>
-          <div> 
-            <article className="item-card">
-            <div>
-              <img src={item.image} alt="" />
-            </div>
-            <div>
-              <p>Title: {item.title}</p>
-              <p>Description: {item.description}</p>
-            </div>
           <div>
-            <p>Owner: 
-            <Link to={`/profile/${item.owner._id}`}>
-              {item.owner.firstName}
-            </Link></p>
-          </div>
-            </article>
-          </div>
+            <div className="item-container">
+              <h1 className="connect-Neighbour">Item</h1>
+            </div>
+            <div>
+              <article className="item-card">
+                <div>
+                  <img width="200" src={item.image} alt="" />
+                </div>
+                <div>
+                  <p>Title: {item.title}</p>
+                  <p>Description: {item.description}</p>
+                </div>
+                <div>
+                  <p>
+                    Owner:
+                    <Link to={`/profile/${item.owner._id}`}>
+                      {item.owner.firstName}
+                    </Link>
+                  </p>
+                </div>
+              </article>
+            </div>
 
-          <div className="btn-contact">
-          <button className="btn" onClick={() => this.handleContact()}>Contact</button>
-          </div>
+            <div className="btn-contact">
+              <button className="btn" onClick={() => this.handleContact()}>
+                Interested
+              </button>
+            </div>
           </div>
         </section>
       );

@@ -29,8 +29,8 @@ class Items extends Component {
               <button> Add Item</button>
             </Link>
             {listOfItems.map((item, index) => (
-              <Link to={`/items/${item._id}`}>
-                <div className="itemsCards">
+              <div className="itemsCards">
+                <Link to={`/items/${item._id}`}>
                   <img
                     width="200"
                     key={index}
@@ -38,8 +38,8 @@ class Items extends Component {
                     alt="item"
                   ></img>
                   <p>Title: {item.title}</p>
-                </div>
-              </Link>
+                </Link>
+              </div>
             ))}
           </div>
         </article>

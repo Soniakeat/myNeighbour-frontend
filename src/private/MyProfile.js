@@ -46,8 +46,12 @@ class MyProfile extends Component {
             </div>
             <div className="infoProfile-container">
               <h4>My profile</h4>
-              <h5>First name:{user.firstName}</h5>
+              <h5>
+                Name:{user.firstName} {user.lastName}
+              </h5>
               <h5>Postal code: {user.postalCode}</h5>
+              <h5>Phone Number: {user.phoneNumber}</h5>
+
               <div className="btn-editProfile">
                 <Link to="/profile/edit">
                   <button>Edit profile</button>
