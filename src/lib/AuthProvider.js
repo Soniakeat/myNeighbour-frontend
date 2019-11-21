@@ -77,9 +77,24 @@ class AuthProvider extends React.Component {
   };
 
   updateProfile = user => {
-    const { email, firstName, lastName, phoneNumber, postalCode, id } = user;
+    const {
+      email,
+      firstName,
+      lastName,
+      phoneNumber,
+      postalCode,
+      id,
+      avatarURL
+    } = user;
     return profilesApi
-      .editProfile(id, { email, firstName, lastName, phoneNumber, postalCode })
+      .editProfile(id, {
+        email,
+        firstName,
+        lastName,
+        phoneNumber,
+        postalCode,
+        avatarURL
+      })
       .then(user => {
         /* this.props.history.push('/signup/next') */
         this.setState({ user });

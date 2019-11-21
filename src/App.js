@@ -21,6 +21,14 @@ import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
 
 import "./App.css";
+import firebase from "firebase";
+
+const config = {
+  apiKey: "AIzaSyCTDuHxZGHI5Mp5WQQYLVC0Ag8dzSoOFS4",
+  authDomain: "myneighbour-a584f.firebaseapp.com",
+  storageBucket: "gs://myneighbour-a584f.appspot.com"
+};
+firebase.initializeApp(config);
 
 class App extends Component {
   render() {

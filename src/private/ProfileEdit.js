@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import { Redirect } from "react-router-dom";
-
+import firebase from "firebase";
+import FileUploader from "react-firebase-file-uploader";
 import profilesApi from "../services/profiles-service";
 
 class ProfileEdit extends Component {
@@ -11,12 +12,39 @@ class ProfileEdit extends Component {
     firstName: this.props.user.firstName,
     lastName: this.props.user.lastName,
     phoneNumber: this.props.user.phoneNumber,
-    postalCode: this.props.user.postalCode
+    postalCode: this.props.user.postalCode,
+    avatar: "",
+    isUploading: false,
+    progress: 0,
+    avatarURL: this.props.user.image
+  };
+
+  handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
+  handleProgress = progress => this.setState({ progress });
+  handleUploadError = error => {
+    this.setState({ isUploading: false });
+    console.error(error);
+  };
+  handleUploadSuccess = filename => {
+    this.setState({ avatar: filename, progress: 100, isUploading: false });
+    firebase
+      .storage()
+      .ref("images")
+      .child(filename)
+      .getDownloadURL()
+      .then(url => this.setState({ avatarURL: url }));
   };
 
   handleFormSubmit = async event => {
     event.preventDefault();
-    const { email, firstName, lastName, phoneNumber, postalCode } = this.state;
+    const {
+      email,
+      firstName,
+      lastName,
+      phoneNumber,
+      postalCode,
+      avatarURL
+    } = this.state;
     const id = this.props.user._id;
     //console.log(id)
     //console.log(this.state)
@@ -26,7 +54,8 @@ class ProfileEdit extends Component {
       firstName,
       lastName,
       phoneNumber,
-      postalCode
+      postalCode,
+      avatarURL
     });
     //.then(newUser => console.log(newUser))
     this.props.history.push("/profile");
@@ -42,11 +71,30 @@ class ProfileEdit extends Component {
     return (
       <>
         <div>
-          <img className="logo" id="logo" src="/images/Logo.png" alt="" />
-        </div>
-        <div>
           <form className="form-container" onSubmit={this.handleFormSubmit}>
-            <h2 id="connect-Neighbour">Edit Profile</h2>
+          <h2 id="connect-Neighbour">Edit Profile</h2>
+          <img width="60" src={this.state.avatarURL} />
+          {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
+          <label
+            style={{
+              backgroundColor: "#4bd2d6",
+              color: "white",
+              padding: 10,
+              borderRadius: 4,
+              cursor: "pointer"
+            }}
+          >
+            Change Picture
+            <FileUploader
+              hidden
+              accept="image/*"
+              storageRef={firebase.storage().ref("images")}
+              onUploadStart={this.handleUploadStart}
+              onUploadError={this.handleUploadError}
+              onUploadSuccess={this.handleUploadSuccess}
+              onProgress={this.handleProgress}
+            />
+          </label>
             <label
               className="text-label"
               className="label-form"

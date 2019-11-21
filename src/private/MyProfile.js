@@ -29,7 +29,8 @@ class MyProfile extends Component {
     const userFromApi = await profilesApi.getUser(user._id);
     console.log(userFromApi);
     this.setState({
-      user: userFromApi
+      user: userFromApi,
+      avatarURL: user.image
     });
   }
 
@@ -69,7 +70,12 @@ class MyProfile extends Component {
                     <div>
                       <Link to={`/items/${item._id}`}>
                         <h5>Title: {item.title}</h5>
-                        <img key={index} src={item.image} alt="item"></img>
+                        <img
+                          width="200"
+                          key={index}
+                          src={item.image}
+                          alt="item"
+                        ></img>
                       </Link>
                       <div>
                         <Link to={`/items/edit/${item._id}`}>

@@ -21,18 +21,18 @@ class Items {
   //Add One Item
   addItem(item) {
     console.log(item);
-    const { title, description } = item;
+    const { title, description, avatarURL } = item;
     return this.apiService
-      .post("/items/add", { title, description })
+      .post("/items/add", { title, description, avatarURL })
       .then(({ data }) => data);
   }
 
   //Edit One Item
   editItem(item) {
     console.log(item);
-    const { id, title, description } = item;
+    const { id, title, description, avatarURL } = item;
     return this.apiService
-      .patch("/items/edit/" + id, { title, description })
+      .patch("/items/edit/" + id, { title, description, avatarURL })
       .then(({ data }) => data);
   }
 

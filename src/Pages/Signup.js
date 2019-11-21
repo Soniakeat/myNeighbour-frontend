@@ -58,7 +58,7 @@ class Signup extends Component {
     return (
       <>
         {signUpNext ? (
-          <div>
+          <>
             <div className="form-container" id="signupNext-container">
               <div>
                 <img
@@ -130,9 +130,9 @@ class Signup extends Component {
               <p>Already have account?</p>
               <Link to={"login"}>Login</Link>
             </div>
-          </div>
+          </>
         ) : (
-          <div>
+          <>
             <div className="form-container">
               <div>
                 <img className="logo" src="/images/Logo.png" alt="" />
@@ -177,7 +177,7 @@ class Signup extends Component {
                 <Link to={"login"}>Login</Link>
               </span>
             </div>
-          </div>
+          </>
         )}
       </>
     );

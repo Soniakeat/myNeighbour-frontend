@@ -21,27 +21,31 @@ class Items extends Component {
     if (listOfItems) {
       return (
         <article>
-        <div className="titleContainer">
-          <h1 className="connect-Neighbour" >Items of my NEIGHBOURS</h1>
-        </div>
+          <div className="titleContainer">
+            <h1 className="connect-Neighbour">Items of my NEIGHBOURS</h1>
+          </div>
           <div className="itemsContainer">
-          <Link to="/items/add"><button> Add Item</button></Link>
-          {listOfItems.map((item, index) => (
-          <Link to={`/items/${item._id}`}>
-              <div className="itemsCards">        
-                <img key={index} src={item.image} alt="item"></img>
-                <p >Title: {item.title}</p>              
-              </div>
-          </Link>
-          ))}
+            <Link to="/items/add">
+              <button> Add Item</button>
+            </Link>
+            {listOfItems.map((item, index) => (
+              <Link to={`/items/${item._id}`}>
+                <div className="itemsCards">
+                  <img
+                    width="200"
+                    key={index}
+                    src={item.image}
+                    alt="item"
+                  ></img>
+                  <p>Title: {item.title}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </article>
       );
-
     } else {
-      return (
-        <div>Loading...</div>
-      )
+      return <div>Loading...</div>;
     }
   }
 }
