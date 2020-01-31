@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { withAuth } from "../lib/AuthProvider";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { withAuth } from '../lib/AuthProvider';
+import { Link } from 'react-router-dom';
 
-import profilesApi from "../services/profiles-service";
-import itemsAPI from "../services/items-service";
+import profilesApi from '../services/profiles-service';
+import itemsAPI from '../services/items-service';
 
 class MyProfile extends Component {
   state = {
@@ -49,8 +49,12 @@ class MyProfile extends Component {
               <p>
                 <strong>Name:</strong> {user.firstName} {user.lastName}
               </p>
-              <p><strong>Postal code:</strong> {user.postalCode}</p>
-              <p><strong>Phone Number:</strong>  {user.phoneNumber}</p>
+              <p>
+                <strong>Postal code:</strong> {user.postalCode}
+              </p>
+              <p>
+                <strong>Phone Number:</strong> {user.phoneNumber}
+              </p>
 
               <div className="btn-editProfile">
                 <Link to="/profile/edit">
@@ -73,7 +77,9 @@ class MyProfile extends Component {
                   {user.items.map((item, index) => (
                     <div className="user-item-container">
                       <Link to={`/items/${item._id}`}>
-                        <p><strong>Title:</strong> {item.title}</p>
+                        <p>
+                          <strong>Title:</strong> {item.title}
+                        </p>
                         <img
                           width="200"
                           key={index}
@@ -82,34 +88,32 @@ class MyProfile extends Component {
                         ></img>
                       </Link>
                       <div className="btn-profile-container">
-                        <Link  to={`/items/edit/${item._id}`}>
+                        <Link to={`/items/edit/${item._id}`}>
                           <button className="btn-edit">Edit Item</button>
                         </Link>
                         <Link to="/items/add">
                           <button className="btn-edit">Add Item</button>
                         </Link>
                       </div>
-                      <button className="delete-btn btn-edit" onClick={() => this.handleDelete(item._id)}>
+                      <button
+                        className="delete-btn btn-edit"
+                        onClick={() => this.handleDelete(item._id)}
+                      >
                         Delete item
                       </button>
+                      <h5>
+                        Contacts:{' '}
+                        {item.contacts
+                          .map(contact => contact.firstName)
+                          .join(', ')}
+                      </h5>
                     </div>
                   ))}
-                  {/*   <div>
-                    {items.map((item, index) => (
-                      <h5>Contacts: {item._id.contacts}</h5>
-                    ))}
-                  </div> */}
                 </>
               ) : (
                 <p>Users has no items...</p>
               )}
             </div>
-
-            {/*   <div>
-           {items.map((item, index) => (           
-           
-            )){`/profile/${item.contacts._id}`}>{item.contacts}</Link> 
-            </div>   */}
           </article>
         </section>
       </>
