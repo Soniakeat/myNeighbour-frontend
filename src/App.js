@@ -1,4 +1,3 @@
-// const typography = new Typography(lincolnTheme)
 import React, { Component } from "react";
 import { Switch } from "react-router-dom";
 import AuthProvider from "./lib/AuthProvider";

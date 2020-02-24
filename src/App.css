@@ -1,4 +1,5 @@
 /*RESET*/
+
 * {
   margin: 0px;
   padding: 0px;
@@ -11,6 +12,7 @@ a {
 }
 
 /*NAVBAR*/
+
 .nav-container {
   background: rgb(75, 210, 214);
   display: flex;
@@ -30,6 +32,7 @@ a {
 }
 
 /*FORMS*/
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -38,9 +41,11 @@ a {
   padding-top: 20%;
   padding-bottom: 4%;
 }
+
 .form-container > h1{
  margin-bottom: 20px;
 }
+
 textarea{
   padding: 2vh;
   text-align: center;
@@ -85,6 +90,7 @@ textarea{
 }
 
 /*LANDING PAGE*/
+
 #logo-land {
   max-width: 76%;
   display: flex;
@@ -110,6 +116,7 @@ textarea{
 }
 
 /*LOGO & TAGLINE*/
+
 .logo {
   max-width: 63%;
   display: flex;
@@ -133,6 +140,7 @@ textarea{
 }
 
 /*ITEMS PAGE*/
+
 .itemsContainer {
   text-align: center;
 }
@@ -188,6 +196,7 @@ textarea{
 }
 
 /*PROFILE PAGE*/
+
 .item-container {
   display: flex;
   flex-direction: column;
@@ -200,7 +209,6 @@ textarea{
   margin-bottom: 10px;
 }
 
-
 .items-owner {
   text-align: center;
 }
@@ -210,10 +218,12 @@ textarea{
 }
 
 /*MY PROFILE PAGE*/
+
 .profil-section{
   padding-top: 60px;
   padding-bottom: 60px;
 }
+
 .myProfile-container {
   padding: 1%;
   display: flex;
@@ -230,8 +240,7 @@ textarea{
   padding: 25px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  
+  justify-content: center;  
 }
 
 .btn-editProfile {
@@ -273,12 +282,14 @@ textarea{
   margin-bottom: 40px;
   
 }
+
 .user-item-container>a{
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
+
 .btn-profile-container{
   display: flex;
   justify-content: space-between;
@@ -286,7 +297,9 @@ textarea{
   margin-top: 20px;
   margin-bottom: 7px;
 }
+
 /*FOOTER*/
+
 .footer {
   padding: 7px;
   background: rgb(75, 210, 214);

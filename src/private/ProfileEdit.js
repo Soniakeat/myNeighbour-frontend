@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-import { Redirect } from "react-router-dom";
 import firebase from "firebase";
 import FileUploader from "react-firebase-file-uploader";
-import profilesApi from "../services/profiles-service";
 
 class ProfileEdit extends Component {
   state = {
@@ -46,8 +44,6 @@ class ProfileEdit extends Component {
       avatarURL
     } = this.state;
     const id = this.props.user._id;
-    //console.log(id)
-    //console.log(this.state)
     await this.props.updateProfile({
       id,
       email,
@@ -57,7 +53,6 @@ class ProfileEdit extends Component {
       postalCode,
       avatarURL
     });
-    //.then(newUser => console.log(newUser))
     this.props.history.push("/profile");
   };
 

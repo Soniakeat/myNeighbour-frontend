@@ -8,14 +8,14 @@ class Profiles {
     });
   }
 
-  //GET One User????????????????
+  //GET One User
   getUser(id) {
     return this.apiService
       .get(`/profile/${id}/items`)
       .then(({ data }) => data.user);
   }
 
-  //GET owner items ?????????
+  //GET owner items
   getItemsOwner(id) {
     return this.apiService.get(`/profile/${id}/items`).then(({ data }) => data);
   }

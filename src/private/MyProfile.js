@@ -42,7 +42,7 @@ class MyProfile extends Component {
         <section className="profil-section">
           <article className="myProfile-container">
             <div className="imgProfile-container">
-              <img width="60" src={user.image}></img>
+              <img width="60" src={user.image} alt="myProfile"></img>
             </div>
             <div className="infoProfile-container">
               <h4 className="title-profile">My profile</h4>

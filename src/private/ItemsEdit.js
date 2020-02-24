@@ -69,14 +69,14 @@ class ItemEdit extends Component {
   };
 
   render() {
-    const { image, title, description, redirect } = this.state;
+    const { title, description, redirect } = this.state;
     return (
       <>
         <div>
           <form onSubmit={this.handleFormSubmit}>
             <div className="form-container">
               <h2 className="connect-Neighbour">Edit your Items</h2>
-              <img width="60" src={this.state.avatarURL} />
+              <img width="60" src={this.state.avatarURL} alt="edit Item" />
               {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
               <label
                 style={{
@@ -99,8 +99,7 @@ class ItemEdit extends Component {
                 />
               </label>
               <label
-                className="label-form"
-                className="text-label"
+                className="label-form text-label"
                 htmlFor="title"
               >
                 Title
@@ -113,8 +112,7 @@ class ItemEdit extends Component {
                 value={title}
               />
               <label
-                className="label-form"
-                className="text-label"
+                className="label-form text-label"
                 htmlFor="description"
               >
                 Description

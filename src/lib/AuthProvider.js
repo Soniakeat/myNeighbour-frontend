@@ -7,7 +7,6 @@ import { withRouter } from "react-router-dom";
 
 const { Consumer, Provider } = React.createContext();
 
-// HOC
 const withAuth = WrappedComponent => {
   return class extends React.Component {
     render() {
@@ -43,7 +42,6 @@ const withAuth = WrappedComponent => {
   };
 };
 
-// PROVIDER
 class AuthProvider extends React.Component {
   state = { isLoggedin: false, user: null, isLoading: true };
 
@@ -70,7 +68,6 @@ class AuthProvider extends React.Component {
     return auth
       .signup({ email, password, firstName, lastName, phoneNumber, postalCode })
       .then(user => {
-        /* this.props.history.push('/signup/next') */
         this.setState({ isLoggedin: true, user });
       })
       .catch(error => console.log(error));

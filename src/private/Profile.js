@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import profilesApi from "../services/profiles-service";
-import itemsApi from "../services/items-service";
 import { Link } from "react-router-dom";
 
 class Profile extends Component {

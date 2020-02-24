@@ -11,7 +11,6 @@ class Item extends Component {
   async componentDidMount() {
     const { id } = this.props.match.params;
     const item = await itemsApi.getContacts(id);
-    //console.log(item)
     this.setState({
       item
     });
