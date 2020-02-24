@@ -35,6 +35,7 @@ class ItemsAdd extends Component {
     this.setState({ isUploading: false });
     console.error(error);
   };
+  
   handleUploadSuccess = filename => {
     this.setState({ avatar: filename, progress: 100, isUploading: false });
     firebase
@@ -64,7 +65,7 @@ class ItemsAdd extends Component {
         <div className="form-add-item">
           <form className="form-container" onSubmit={this.handleFormSubmit}>
             <h1>Add Item</h1>
-            <img width="60" src={this.state.avatarURL} />
+            <img width="60" src={this.state.avatarURL} alt="addItem"/>
             {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
             <label
               style={{
@@ -87,8 +88,7 @@ class ItemsAdd extends Component {
               />
             </label>
             <label
-              className="text-label"
-              className="label-form"
+              className="text-label label-form"
               htmlFor="title"
             >
               Title
@@ -101,8 +101,7 @@ class ItemsAdd extends Component {
               value={title}
             />
             <label
-              className="text-label"
-              className="label-form"
+              className="text-label label-form"
               htmlFor="description"
             >
               {" "}

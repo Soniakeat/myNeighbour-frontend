@@ -68,7 +68,7 @@ class ProfileEdit extends Component {
         <div>
           <form className="form-container" onSubmit={this.handleFormSubmit}>
           <h2 id="connect-Neighbour">Edit Profile</h2>
-          <img width="60" src={this.state.avatarURL} className="nose"/>
+          <img width="60" src={this.state.avatarURL} className="nose" alt="avatar"/>
           {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
           <label
             style={{
@@ -91,8 +91,7 @@ class ProfileEdit extends Component {
             />
           </label>
             <label
-              className="text-label"
-              className="label-form"
+              className="text-label label-form"
               htmlFor="email"
             >
               Email
@@ -106,8 +105,7 @@ class ProfileEdit extends Component {
               value={email}
             />
             <label
-              className="text-label"
-              className="label-form"
+              className="text-label label-form"
               htmlFor="firstName"
             >
               First Name
@@ -120,8 +118,7 @@ class ProfileEdit extends Component {
               value={firstName}
             />
             <label
-              className="text-label"
-              className="label-form"
+              className="text-label label-form"
               htmlFor="lastName"
             >
               Last Name
@@ -134,8 +131,7 @@ class ProfileEdit extends Component {
               value={lastName}
             />
             <label
-              className="text-label"
-              className="label-form"
+              className="text-label label-form"
               htmlFor="phoneNumber"
             >
               Phone Number
@@ -148,8 +144,7 @@ class ProfileEdit extends Component {
               value={phoneNumber}
             />
             <label
-              className="text-label"
-              className="label-form"
+              className="text-label label-form"
               htmlFor="postalCode"
             >
               Postal Code
