@@ -24,6 +24,7 @@ class MyProfile extends Component {
     });
   };
 
+
   async componentDidMount() {
     const { user } = this.props;
     const userFromApi = await profilesApi.getUser(user._id);

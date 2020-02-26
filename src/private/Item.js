@@ -23,10 +23,6 @@ class Item extends Component {
     console.log(newContact);
   }
 
-  async getOwner() {
-    //const { id } = this.props.match.params.id;
-  }
-
   render() {
     const { item } = this.state;
     console.log(item);
