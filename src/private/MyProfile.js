@@ -35,6 +35,11 @@ class MyProfile extends Component {
     });
   }
 
+  archivedUser = async () => {
+    const userId = this.props.user._id; 
+    const archived = await profilesApi.archiveUser(userId);
+  }
+
   render() {
     const { user } = this.state;
     console.log(user);
@@ -62,7 +67,7 @@ class MyProfile extends Component {
                   <button className="btn-edit">Edit profile</button>
                 </Link>
                 <Link to="/profile/edit">
-                  <button className="delete-btn btn-edit ">Delete</button>
+                  <button onClick={this.archivedUser} className="delete-btn btn-edit ">Delete</button>
                 </Link>
               </div>
             </div>

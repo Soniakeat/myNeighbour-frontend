@@ -26,7 +26,15 @@ class Profiles {
       .put(`/profile/edit/${id}`, profileData)
       .then(({ data }) => data);
   }
+
+  //Archive user
+  archiveUser(userId) {
+    return this.apiService
+    .put(`/archive/${userId}`)
+  }
+
 }
+
 
 const profilesAPI = new Profiles();
 
